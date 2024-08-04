@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:some_random_design1/helpers/attribute_helpers/colors_helper.dart';
+import '../../helpers/style_helpers/extra_colors.dart';
 
 class BottomSheetDragger extends StatelessWidget {
   const BottomSheetDragger({super.key});

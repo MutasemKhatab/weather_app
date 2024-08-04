@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../helpers/attribute_helpers/colors_helper.dart';
-import '../../helpers/attribute_helpers/filters.dart';
+import '../../helpers/style_helpers/filters.dart';
+import '../../helpers/style_helpers/extra_colors.dart';
 
 class StyledContainerForBottomSheet extends StatelessWidget {
   const StyledContainerForBottomSheet({super.key, required this.child});

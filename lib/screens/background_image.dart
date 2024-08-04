@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-import '../screens/home.dart';
+import 'home.dart';
 
 class BackgroundImage extends StatelessWidget {
   const BackgroundImage({super.key});

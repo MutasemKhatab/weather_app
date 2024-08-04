@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:some_random_design1/helpers/themes/app_text_styles.dart';
+
+import '../helpers/style_helpers/app_text_styles.dart';
 
 class HomeWeatherHeader extends StatelessWidget {
   const HomeWeatherHeader({super.key});

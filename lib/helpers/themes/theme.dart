@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:some_random_design1/helpers/themes/app_text_styles.dart';
-import '../attribute_helpers/colors_helper.dart';
-import '../widgets_helper/tabbar_gradient_indicator.dart';
+import '../style_helpers/app_text_styles.dart';
+import '../style_helpers/extra_colors.dart';
+import '../style_helpers/tabbar_gradient_indicator.dart';
 
 final theme = ThemeData(
   fontFamily: fontFamilyName,

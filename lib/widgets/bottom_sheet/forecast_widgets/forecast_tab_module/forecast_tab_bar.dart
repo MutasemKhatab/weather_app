@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class ForecastTabBar extends StatelessWidget {
   const ForecastTabBar({
     super.key,
@@ -12,7 +11,7 @@ class ForecastTabBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TabBar(
-      //TODO: make provider for the tab bar
+      //TODO: make provider for the tab bar controller
       controller: tabController,
       tabs: const [
         Tab(text: 'Hourly Forecast'),

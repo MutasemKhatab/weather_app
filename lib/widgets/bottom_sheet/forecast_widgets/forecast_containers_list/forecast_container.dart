@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:some_random_design1/helpers/attribute_helpers/colors_helper.dart';
-import 'package:some_random_design1/helpers/themes/app_text_styles.dart';
-import 'package:some_random_design1/widgets/bottom_sheet/forecast_container_image.dart';
+import 'package:some_random_design1/widgets/bottom_sheet/forecast_widgets/forecast_containers_list/forecast_container_image.dart';
+import '../../../../helpers/style_helpers/app_text_styles.dart';
 
 class ForecastContainer extends StatelessWidget {
   const ForecastContainer({super.key});
@@ -36,8 +35,7 @@ abstract class _DecorationHelper {
   static const _shadowOffset = Offset(5, 4);
   static const _borderRadius = BorderRadius.all(Radius.circular(30));
 
-  static const Decoration roundedRectangleWithShadow =
-      ShapeDecoration(
+  static const Decoration roundedRectangleWithShadow = ShapeDecoration(
     color: _backgroundColor,
     shape: RoundedRectangleBorder(
       side: BorderSide(width: 0.5, color: _sideColor),

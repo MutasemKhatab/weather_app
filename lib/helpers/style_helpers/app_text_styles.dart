@@ -1,6 +1,6 @@
 import 'package:flutter/painting.dart';
 
-import '../attribute_helpers/colors_helper.dart';
+import 'extra_colors.dart';
 
 abstract class AppTextStyles {
   static const whiteDefault = TextStyle(color: ExtraColors.defaultTextColor);

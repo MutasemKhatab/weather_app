@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:some_random_design1/widgets/home_weather_header.dart';
-import 'package:some_random_design1/widgets/bottom_sheet/bottom_sheet.dart';
+import 'package:some_random_design1/widgets/bottom_sheet/forecast_widgets/forecast_bottom_sheet.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});

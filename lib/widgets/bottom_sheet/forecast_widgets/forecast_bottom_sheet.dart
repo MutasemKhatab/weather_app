@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:some_random_design1/widgets/bottom_sheet/bottom_sheet_content_box.dart';
-import 'package:some_random_design1/widgets/bottom_sheet/bottom_sheet_styled_container.dart';
-import '../../helpers/widgets_helper/bottom_sheet_dragger.dart';
+import 'package:some_random_design1/widgets/bottom_sheet/bottom_sheet_container.dart';
+import 'package:some_random_design1/widgets/bottom_sheet/styled_container_for_bottom_sheet.dart';
+import '../bottom_sheet_dragger.dart';
 
 class ForecastBottomSheet extends StatefulWidget {
   const ForecastBottomSheet({super.key});

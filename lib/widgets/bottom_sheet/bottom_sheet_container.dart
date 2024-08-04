@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'forecast_tab_bar.dart';
-import 'forecast_tab_view.dart';
+import 'forecast_widgets/forecast_tab_module/forecast_tab_bar.dart';
+import 'forecast_widgets/forecast_tab_module/forecast_tab_view.dart';
 
 class BottomSheetContainer extends StatefulWidget {
   const BottomSheetContainer({super.key, required this.scrollController});
@@ -35,8 +35,7 @@ class _BottomSheetContainerState extends State<BottomSheetContainer>
         children: [
           ForecastTabBar(tabController: tabController),
           ForecastTabView(
-              tabController: tabController,
-              scrollController: scrollController),
+              tabController: tabController, scrollController: scrollController),
         ],
       ),
     );

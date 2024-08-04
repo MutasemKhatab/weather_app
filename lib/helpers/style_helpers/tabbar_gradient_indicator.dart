@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
-//TODO remove unused
+
+/// I STOLE THIS CODE FROM PACKAGE: https://pub.dev/packages/tabbar_gradient_indicator
+
 class TabBarGradientIndicator extends Decoration {
   const TabBarGradientIndicator(
       {this.borderSide = const BorderSide(width: 2.0, color: Colors.white),
-        this.insets = EdgeInsets.zero,
-        this.indicatorWidth = 2,
-        this.gradientColor});
+      this.insets = EdgeInsets.zero,
+      this.indicatorWidth = 2,
+      this.gradientColor});
 
   final List<Color>? gradientColor;
   final BorderSide borderSide;
@@ -51,14 +53,16 @@ class TabBarGradientIndicator extends Decoration {
 class _UnderlinePainter extends BoxPainter {
   _UnderlinePainter(
       {required this.decoration,
-        VoidCallback? onChanged,
-        this.gradientColor,
-        this.indicatorWidth = 2})
+      VoidCallback? onChanged,
+      this.gradientColor,
+      this.indicatorWidth = 2})
       : super(onChanged);
 
   final double indicatorWidth;
   final TabBarGradientIndicator decoration;
+
   BorderSide get borderSide => decoration.borderSide;
+
   EdgeInsetsGeometry get insets => decoration.insets;
   List<Color>? gradientColor;
 
@@ -67,8 +71,8 @@ class _UnderlinePainter extends BoxPainter {
     assert(configuration.size != null);
 
     final Rect rect = offset &
-    insets.deflateSize(
-        (configuration.size ?? Size(indicatorWidth, indicatorWidth)));
+        insets.deflateSize(
+            (configuration.size ?? Size(indicatorWidth, indicatorWidth)));
     Rect myRect = Rect.fromLTWH(
         rect.left,
         rect.bottom - indicatorWidth * 0.5 - 1,
@@ -78,8 +82,8 @@ class _UnderlinePainter extends BoxPainter {
     final Paint paint = borderSide.toPaint()
       ..strokeWidth = indicatorWidth * 0.5
       ..strokeCap = StrokeCap.square
-      ..shader = ui.Gradient.linear(
-          rect.centerLeft, rect.center, gradientColor ?? [], [0.1,1], TileMode.mirror,null );
+      ..shader = ui.Gradient.linear(rect.centerLeft, rect.center,
+          gradientColor ?? [], [0.1, 1], TileMode.mirror, null);
 
     canvas.drawRRect(
         RRect.fromRectAndRadius(myRect, Radius.circular(indicatorWidth * 0.25)),
