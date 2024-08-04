@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../style_helpers/app_text_styles.dart';
 import '../style_helpers/extra_colors.dart';
 import '../style_helpers/tabbar_gradient_indicator.dart';

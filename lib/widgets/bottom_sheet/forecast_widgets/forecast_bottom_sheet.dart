@@ -1,19 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:some_random_design1/widgets/bottom_sheet/bottom_sheet_container.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:some_random_design1/widgets/bottom_sheet/styled_container_for_bottom_sheet.dart';
-import '../bottom_sheet_dragger.dart';
 
-class ForecastBottomSheet extends StatefulWidget {
+import '../../../providers/bottom_sheet_scroll_controller_provider.dart';
+
+class ForecastBottomSheet extends ConsumerStatefulWidget {
   const ForecastBottomSheet({super.key});
 
   @override
-  State<ForecastBottomSheet> createState() => _ForecastBottomSheetState();
+  ConsumerState<ForecastBottomSheet> createState() =>
+      _ForecastBottomSheetState();
 }
 
-class _ForecastBottomSheetState extends State<ForecastBottomSheet> {
+class _ForecastBottomSheetState extends ConsumerState<ForecastBottomSheet> {
   final _minChildSize = 0.4;
   final _maxChildSize = 0.8;
-  final _space = const SizedBox(height: 8);
+  late ScrollController _scrollController;
+
+  void initializeScrollController(WidgetRef ref) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      ref.read(bottomSheetScrollControllerProvider).setScrollController =
+          _scrollController;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    initializeScrollController(ref);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,15 +37,9 @@ class _ForecastBottomSheetState extends State<ForecastBottomSheet> {
         minChildSize: _minChildSize,
         maxChildSize: _maxChildSize,
         shouldCloseOnMinExtent: false,
-        builder: (BuildContext context, ScrollController scrollController) {
-          return StyledContainerForBottomSheet(
-            child: Column(children: [
-              _space,
-              const BottomSheetDragger(),
-              _space,
-              BottomSheetContainer(scrollController: scrollController)
-            ]),
-          );
+        builder: (context, scrollController) {
+          _scrollController = scrollController;
+          return const StyledContainerForBottomSheet();
         });
   }
 }

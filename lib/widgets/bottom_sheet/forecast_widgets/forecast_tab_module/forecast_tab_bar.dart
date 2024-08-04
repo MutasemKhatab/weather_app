@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class ForecastTabBar extends StatelessWidget {
-  const ForecastTabBar({
-    super.key,
-    required this.tabController,
-  });
+import '../../../../providers/forecast_tab_controller_provider.dart';
 
-  final TabController tabController;
+class ForecastTabBar extends ConsumerWidget {
+  const ForecastTabBar({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final TabController tabController =
+        ref.read(forecastTabControllerProvider).controller;
     return TabBar(
-      //TODO: make provider for the tab bar controller
       controller: tabController,
       tabs: const [
         Tab(text: 'Hourly Forecast'),

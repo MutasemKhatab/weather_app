@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../helpers/style_helpers/filters.dart';
 import '../../helpers/style_helpers/extra_colors.dart';
+import '../../helpers/style_helpers/filters.dart';
+import 'bottom_sheet_container.dart';
+import 'bottom_sheet_dragger.dart';
 
 class StyledContainerForBottomSheet extends StatelessWidget {
-  const StyledContainerForBottomSheet({super.key, required this.child});
-
-  final Widget child;
+  const StyledContainerForBottomSheet({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,12 @@ class StyledContainerForBottomSheet extends StatelessWidget {
         filter: Filters.blurFilter,
         child: Container(
             decoration: _BottomSheetDecorations.innerContainerDecoration,
-            child: child),
+            child: const Column(children: [
+              _Dimensions.space,
+              BottomSheetDragger(),
+              _Dimensions.space,
+              BottomSheetContainer()
+            ])),
       ),
     );
   }
@@ -29,6 +34,7 @@ class StyledContainerForBottomSheet extends StatelessWidget {
 abstract class _Dimensions {
   static final double fullDeviceWidth = 100.w;
   static final double bottomSheetHeight = 80.h;
+  static const space = SizedBox(height: 8);
 }
 
 abstract class _BottomSheetDecorations {

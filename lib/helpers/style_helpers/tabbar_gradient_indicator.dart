@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
+
+import 'package:flutter/material.dart';
 
 /// I STOLE THIS CODE FROM PACKAGE: https://pub.dev/packages/tabbar_gradient_indicator
 

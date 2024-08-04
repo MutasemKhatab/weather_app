@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:some_random_design1/providers/background_image_provider.dart';
 
 import 'home.dart';
 
@@ -10,20 +11,11 @@ class BackgroundImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        //TODO: make provider for the background image
-        Image.asset(
-          'assets/images/background.png',
-          width: 100.w,
-          fit: BoxFit.fitWidth,
-        ),
+        BackgroundImageProvider.backgroundImage,
         Container(
-          alignment: Alignment.center,
-          margin: EdgeInsets.only(top: 10.h),
-          child: Image.asset(
-            'assets/images/house.png',
-            width: 40.h,
-          ),
-        ),
+            alignment: Alignment.center,
+            margin: EdgeInsets.only(top: 10.h),
+            child: BackgroundImageProvider.illustrationImage),
         const Home(),
       ],
     );

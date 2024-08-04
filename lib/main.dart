@@ -4,12 +4,11 @@ import 'package:some_random_design1/helpers/themes/theme.dart';
 import 'package:some_random_design1/screens/background_image.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 //TODO edit colors and put them in [ExtraColors]
 //TODO edit widget where you pass the parameter 1 million times use Riverpod
-//TODO check widget that contain repeated code
-//switch the stateful widget to stateless widget if possible
 //TODO add drag ability to the drag handel
 
 class MyApp extends StatelessWidget {
