@@ -8,7 +8,6 @@ void main() {
   runApp(const MyApp());
 }
 //TODO edit colors and put them in [ExtraColors]
-//TODO edit widget where you pass the parameter 1 million times use Riverpod
 //TODO add drag ability to the drag handel
 
 class MyApp extends StatelessWidget {

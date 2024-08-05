@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:provider/provider.dart';
 import 'package:some_random_design1/providers/forecast_tab_controller_provider.dart';
 
 import 'forecast_tab.dart';
 
-class ForecastTabView extends ConsumerWidget {
-  const ForecastTabView({
-    super.key
-  });
+class ForecastTabView extends StatelessWidget {
+  const ForecastTabView({super.key});
+
   final scrollPhysics = const NeverScrollableScrollPhysics();
 
   @override
-  Widget build(BuildContext context,WidgetRef ref) {
+  Widget build(BuildContext context) {
     final tabController =
-        ref.read(forecastTabControllerProvider.notifier).controller;
+        Provider.of<ForecastTabControllerProvider>(context).controller;
+
     return Expanded(
       child: TabBarView(
         controller: tabController,

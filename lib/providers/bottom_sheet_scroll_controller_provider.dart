@@ -1,17 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class BottomSheetScrollControllerProvider extends ChangeNotifier {
-  ScrollController _scrollController = ScrollController();
+class BottomSheetScrollControllerProvider with ChangeNotifier {
+  BottomSheetScrollControllerProvider(this._scrollViewController);
 
-  ScrollController get scrollController => _scrollController;
+  final ScrollController _scrollViewController;
 
-  set setScrollController(ScrollController scrollController) {
-    _scrollController = scrollController;
-    notifyListeners();
-  }
+  ScrollController get scrollViewController => _scrollViewController;
 }
-
-final bottomSheetScrollControllerProvider = ChangeNotifierProvider((ref) {
-  return BottomSheetScrollControllerProvider();
-});

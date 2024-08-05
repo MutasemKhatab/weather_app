@@ -19,7 +19,6 @@ class ForecastListView extends StatelessWidget {
         padding: listPadding,
         //TODO: this is a placeholder
         itemCount: 10,
-        //TODO: use provider instead of passing the parameter
         scrollDirection: scrollDirection,
         itemBuilder: (_, index) => const ForecastContainer(),
       ),
