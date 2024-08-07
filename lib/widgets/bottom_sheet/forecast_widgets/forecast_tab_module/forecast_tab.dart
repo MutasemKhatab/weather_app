@@ -13,12 +13,6 @@ class ForecastTab extends StatelessWidget {
             .scrollViewController;
 
     return SingleChildScrollView(
-        controller: scrollController,
-        child: const Column(
-          children: [
-            ForecastListView(),
-            SizedBox(height: 1000),
-          ],
-        ));
+        controller: scrollController, child: const ForecastListView());
   }
 }

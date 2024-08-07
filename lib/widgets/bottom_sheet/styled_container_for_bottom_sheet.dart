@@ -56,14 +56,14 @@ abstract class _BorderRadiusHelper {
 
 abstract class _BorderHelper {
   static const innerContainerBorder =
-      Border(top: BorderSide(color: ExtraColors.white30opacity, width: 1));
+      Border(top: BorderSide(color: ExtraColors.containerSide, width: 1));
 }
 
 abstract class _GradientHelper {
   static const outerContainerGradient = LinearGradient(
-    colors: [ExtraColors.semiTransparentPurple, Colors.transparent],
+    colors: [Color(0xD0C427FB), Colors.transparent],
     begin: Alignment.topCenter,
-    end: Alignment.center,
+    end: Alignment(0,0.75),
   );
 
   static const innerContainerGradient = LinearGradient(

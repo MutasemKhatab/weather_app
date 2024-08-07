@@ -5,7 +5,7 @@ import 'extra_colors.dart';
 abstract class AppTextStyles {
   static const whiteDefault = TextStyle(color: ExtraColors.defaultTextColor);
   static const displayLarge =
-      TextStyle(color: ExtraColors.defaultTextColor, fontSize: 90, height: 0.9);
+      TextStyle(color: ExtraColors.defaultTextColor, fontSize: 90,);
   static const displayMedium =
       TextStyle(color: ExtraColors.defaultTextColor, fontSize: 35);
   static const displaySmall = TextStyle(

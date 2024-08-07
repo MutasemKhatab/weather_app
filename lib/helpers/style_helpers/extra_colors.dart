@@ -7,5 +7,7 @@ extension ExtraColors on Colors {
   static const white30opacity = Color(0x4CFFFFFF);
   static const black30opacity = Color(0x4C000000);
   static const Color semiWhite = Color(0x99EBF5EB);
+  static const Color containerSide = Color(0x21FFFFFF);
   static const defaultTextColor = Colors.white;
+
 }

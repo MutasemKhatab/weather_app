@@ -1,36 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:some_random_design1/helpers/scroll_utls.dart';
-import '../../../providers/bottom_sheet_scroll_controller_provider.dart';
+import 'package:some_random_design1/consts/bottom_sheet_consts.dart';
+import 'package:some_random_design1/helpers/scroll_utils.dart';
 import 'package:some_random_design1/widgets/bottom_sheet/styled_container_for_bottom_sheet.dart';
+import '../../../providers/bottom_sheet_scroll_controller_provider.dart';
+import 'forecast_header/positioned_header.dart';
 
-class ForecastBottomSheet extends StatelessWidget {
-  const ForecastBottomSheet({super.key});
-
-  final _minChildSize = 0.4;
-  final _maxChildSize = 0.8;
-
-  BottomSheetScrollControllerProvider initializeAndReturnScrollProvider(
-      ScrollController scrollController) {
-    ScrollUtls.scrollViewController = scrollController;
-
-    return BottomSheetScrollControllerProvider(scrollController);
-  }
+class Foreground extends StatelessWidget {
+  const Foreground({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final draggableController = ScrollUtls.draggableScrollableController;
+    addControlListener();
+    final draggableController = ScrollUtils.draggableScrollableController;
 
-    return DraggableScrollableSheet(
-      initialChildSize: _minChildSize,
-      minChildSize: _minChildSize,
-      maxChildSize: _maxChildSize,
-      controller: draggableController,
-      builder: (context, scrollController) {
-        return ChangeNotifierProvider(
-            create: (_) => initializeAndReturnScrollProvider(scrollController),
-            child: const StyledContainerForBottomSheet());
-      },
+    return Stack(
+      children: [
+        const PositionedHeader(),
+        DraggableScrollableSheet(
+          initialChildSize: minBottomSheetHeight,
+          minChildSize: minBottomSheetHeight,
+          maxChildSize: maxBottomSheetHeight,
+          controller: draggableController,
+          builder: (context, scrollController) {
+            return ChangeNotifierProvider(
+                create: (_) =>
+                    BottomSheetScrollControllerProvider(scrollController),
+                child: const StyledContainerForBottomSheet());
+          },
+        ),
+      ],
     );
+  }
+
+  void addControlListener() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      // adding value listener to the scroll controller
+      ScrollUtils.addListener();
+    });
   }
 }
