@@ -7,7 +7,6 @@ void main() {
   runApp(const MyApp());
 }
 
-//TODO see the problem when u build apk its not working right
 //TODO [Blue] bottom sheet performance is shit
 //TODO [Red] add drag ability to the drag handel << SEE REFERENCE ITS FKING HARDDDDDDDDDDDDDDDDDDDDDDDDDDD>>
 //TODO [Green] relative font size

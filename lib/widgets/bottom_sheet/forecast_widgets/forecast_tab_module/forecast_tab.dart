@@ -19,6 +19,7 @@ class ForecastTab extends StatelessWidget {
         children: [
           ForecastListView(),
           ForecastGrid(),
+          SizedBox(height: 10),
         ],
       ),
     );

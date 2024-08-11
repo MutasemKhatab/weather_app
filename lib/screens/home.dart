@@ -8,7 +8,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Sizer(
+    return ResponsiveSizer(
       builder: (context, orientation, deviceType) => const Scaffold(
         bottomSheet: Foreground(),
         body: Background(),
