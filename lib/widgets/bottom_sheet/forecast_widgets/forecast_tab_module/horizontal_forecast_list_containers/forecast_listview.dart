@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-import 'forecast_container.dart';
+import 'vertical_forecast_container.dart';
 
 class ForecastListView extends StatelessWidget {
   const ForecastListView({super.key});
@@ -20,7 +20,7 @@ class ForecastListView extends StatelessWidget {
         //TODO: this is a placeholder
         itemCount: 10,
         scrollDirection: scrollDirection,
-        itemBuilder: (_, index) => const ForecastContainer(),
+        itemBuilder: (_, index) => const VerticalForecastContainer(),
       ),
     );
   }

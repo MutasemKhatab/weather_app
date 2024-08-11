@@ -7,7 +7,7 @@ class BottomSheetDragger extends StatelessWidget {
   final width = 50.0;
   final height = 5.0;
   final decoration = const BoxDecoration(
-      color: ExtraColors.black30opacity,
+      color: ExtraColors.semiTransparentBlack,
       borderRadius: BorderRadius.all(Radius.circular(10)));
 
   @override

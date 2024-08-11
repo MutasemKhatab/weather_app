@@ -55,23 +55,23 @@ abstract class _BorderRadiusHelper {
 }
 
 abstract class _BorderHelper {
-  static const innerContainerBorder =
-      Border(top: BorderSide(color: ExtraColors.containerSide, width: 1));
+  static const innerContainerBorder = Border(
+      top: BorderSide(color: ExtraColors.semiTransparentLightWhite, width: 1));
 }
 
 abstract class _GradientHelper {
   static const outerContainerGradient = LinearGradient(
-    colors: [Color(0xD0C427FB), Colors.transparent],
+    colors: [ExtraColors.semiTransparentViolet, Colors.transparent],
     begin: Alignment.topCenter,
-    end: Alignment(0,0.75),
+    end: Alignment(0, 0.75),
   );
 
   static const innerContainerGradient = LinearGradient(
     begin: Alignment(-0.08, -1.0),
     end: Alignment(1.0, 0.95),
     colors: [
-      ExtraColors.semiTransparentDarkBlue,
-      ExtraColors.darkBlueOverlay,
+      ExtraColors.semiTransparentNavyBlue,
+      ExtraColors.semiTransparentMidnightBlue,
     ],
     stops: [0.0468, 0.9545],
   );

@@ -1,11 +1,13 @@
+// ignore_for_file: unused_field
+
 import 'package:flutter/material.dart';
+import 'package:some_random_design1/helpers/style_helpers/app_text_styles.dart';
 import 'package:some_random_design1/helpers/style_helpers/extra_colors.dart';
-import 'package:some_random_design1/widgets/bottom_sheet/forecast_widgets/forecast_containers_list/forecast_container_image.dart';
 
-import '../../../../helpers/style_helpers/app_text_styles.dart';
+import 'forecast_container_image.dart';
 
-class ForecastContainer extends StatelessWidget {
-  const ForecastContainer({super.key});
+class VerticalForecastContainer extends StatelessWidget {
+  const VerticalForecastContainer({super.key});
 
   final containerPadding =
       const EdgeInsets.symmetric(horizontal: 10, vertical: 16);
@@ -31,8 +33,9 @@ class ForecastContainer extends StatelessWidget {
 
 abstract class _DecorationHelper {
   static const _notSelectedBackgroundColor = Color(0x3348319D);
-  //TODO add selected color
-  static const _sideColor = ExtraColors.containerSide;
+  static const _selectedBackgroundColor = Color(0xE048319D);
+
+  static const _sideColor = ExtraColors.semiTransparentLightWhite;
   static const _shadowColor = Color(0x3F000000);
   static const _shadowOffset = Offset(5, 4);
   static const _borderRadius = BorderRadius.all(Radius.circular(30));

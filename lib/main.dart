@@ -6,10 +6,11 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
-//TODO bottom sheet performance is shit
-//TODO add drag ability to the drag handel << SEE REFERENCE ITS FKING HARDDDDDDDDDDDDDDDDDDDDDDDDDDD>>
-//TODO grope methods for the forecast header
-//Use dispose and correct the colors and group the decoration for the container
+
+//TODO see the problem when u build apk its not working right
+//TODO [Blue] bottom sheet performance is shit
+//TODO [Red] add drag ability to the drag handel << SEE REFERENCE ITS FKING HARDDDDDDDDDDDDDDDDDDDDDDDDDDD>>
+//TODO [Green] relative font size
 // see the difference between the different types of BottomSheet
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

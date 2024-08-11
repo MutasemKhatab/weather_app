@@ -18,5 +18,3 @@ class Background extends StatelessWidget {
     );
   }
 }
-
-

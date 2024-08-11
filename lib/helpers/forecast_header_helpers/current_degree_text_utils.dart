@@ -55,8 +55,8 @@ class CurrentDegreeTextUtils {
   }
 
   Color get _color {
-    return Color.lerp(
-        ExtraColors.defaultTextColor, ExtraColors.semiWhite, heightScale)!;
+    return Color.lerp(ExtraColors.defaultTextColor,
+        ExtraColors.semiTransparentPaleWhite, heightScale)!;
   }
 
   FontWeight get _fontWeight {

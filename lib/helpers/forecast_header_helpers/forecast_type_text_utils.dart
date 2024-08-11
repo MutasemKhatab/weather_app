@@ -16,7 +16,7 @@ class ForecastTypeTextUtils {
   double? _textWidth;
 
   double get leftPosition {
-    //TODO find a suitable name for this
+    //TODO [Green] find a suitable name for this
     final normalizedLeftPosition = leftPositionFactor * heightScale;
     final middleScreen = 50.w - textWidth / 2;
     final leftPosition = middleScreen + normalizedLeftPosition;
@@ -25,7 +25,7 @@ class ForecastTypeTextUtils {
   }
 
   double get topPosition {
-    //TODO find a suitable name for this
+    //TODO [Green] find a suitable name for this
     final normalizedPosition = heightScale * positionDifference;
     final top = maxTopPosition - normalizedPosition;
 

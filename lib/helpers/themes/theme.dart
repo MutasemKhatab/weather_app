@@ -13,15 +13,15 @@ final theme = ThemeData(
 const fontFamilyName = 'SfPro';
 
 const tabBarTheme = TabBarTheme(
-    labelColor: ExtraColors.semiWhite,
-    unselectedLabelColor: ExtraColors.semiWhite,
+    labelColor: ExtraColors.semiTransparentPaleWhite,
+    unselectedLabelColor: ExtraColors.semiTransparentPaleWhite,
     labelStyle: AppTextStyles.labelLarge,
     unselectedLabelStyle: AppTextStyles.labelLarge,
     dividerHeight: 3,
-    dividerColor: ExtraColors.semiTransparentDarkBlue,
+    dividerColor: ExtraColors.semiTransparentNavyBlue,
     indicatorSize: TabBarIndicatorSize.tab,
     indicator: TabBarGradientIndicator(
-        gradientColor: [Colors.transparent, ExtraColors.white30opacity],
+        gradientColor: [Colors.transparent, ExtraColors.semiTransparentWhite],
         indicatorWidth: 3));
 
 const bottomSheetTheme =

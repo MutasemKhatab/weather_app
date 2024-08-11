@@ -5,7 +5,7 @@ import '../../providers/background_image_provider.dart';
 
 class BackgroundHouseImage extends StatelessWidget {
   const BackgroundHouseImage({
-    super.key,
+    super.key
   });
 
   @override
