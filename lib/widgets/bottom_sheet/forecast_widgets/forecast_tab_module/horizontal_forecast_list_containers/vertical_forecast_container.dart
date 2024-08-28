@@ -1,17 +1,23 @@
-// ignore_for_file: unused_field
-
 import 'package:flutter/material.dart';
-import 'package:some_random_design1/helpers/style_helpers/app_text_styles.dart';
-import 'package:some_random_design1/helpers/style_helpers/extra_colors.dart';
 
+import '../../../../../helpers/style_helpers/app_text_styles.dart';
+import '../../../../../helpers/style_helpers/extra_colors.dart';
 import 'forecast_container_image.dart';
 
 class VerticalForecastContainer extends StatelessWidget {
-  const VerticalForecastContainer({super.key});
+  const VerticalForecastContainer({
+    super.key,
+    required this.time,
+    required this.icon,
+    required this.temp,
+  });
 
   final containerPadding =
       const EdgeInsets.symmetric(horizontal: 10, vertical: 16);
   final containerMargin = const EdgeInsets.only(left: 10);
+  final String time;
+  final String icon;
+  final int temp;
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +25,12 @@ class VerticalForecastContainer extends StatelessWidget {
       margin: containerMargin,
       padding: containerPadding,
       decoration: _DecorationHelper.roundedRectangleWithShadow,
-      child: const Column(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text('3 AM', style: AppTextStyles.bodyMedium),
-          ForecastContainerImage(),
-          Text('19°', style: AppTextStyles.bodyMedium),
+          Text(time, style: AppTextStyles.bodyMedium),
+          ForecastContainerImage(iconCode: icon),
+          Text('$temp°', style: AppTextStyles.bodyMedium),
         ],
       ),
     );
@@ -32,8 +38,7 @@ class VerticalForecastContainer extends StatelessWidget {
 }
 
 abstract class _DecorationHelper {
-  static const _notSelectedBackgroundColor = Color(0x3348319D);
-  static const _selectedBackgroundColor = Color(0xE048319D);
+  static const _backgroundColor = Color(0x3348319D);
 
   static const _sideColor = ExtraColors.semiTransparentLightWhite;
   static const _shadowColor = Color(0x3F000000);
@@ -41,7 +46,7 @@ abstract class _DecorationHelper {
   static const _borderRadius = BorderRadius.all(Radius.circular(30));
 
   static const Decoration roundedRectangleWithShadow = ShapeDecoration(
-    color: _notSelectedBackgroundColor,
+    color: _backgroundColor,
     shape: RoundedRectangleBorder(
       side: BorderSide(width: 0.5, color: _sideColor),
       borderRadius: _borderRadius,

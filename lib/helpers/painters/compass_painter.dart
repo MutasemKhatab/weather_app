@@ -4,8 +4,8 @@ import '../style_helpers/app_text_styles.dart';
 import '../style_helpers/extra_colors.dart';
 
 class CompassPainter extends CustomPainter {
-  final double windDirection; // Wind direction in degrees
-  final double windSpeed; // Wind speed in km/h
+  final double windDirection;
+  final double windSpeed;
 
   CompassPainter({required this.windDirection, required this.windSpeed});
 
@@ -81,8 +81,8 @@ class CompassPainter extends CustomPainter {
       ..style = PaintingStyle.fill;
     final arrowLength = radius;
     const arrowHeadSize = 10.0;
-    drawArrow(canvas, center, radius, windDirection, arrowLength, arrowHeadSize,
-        arrowPaint);
+    drawArrow(canvas, center, radius, windDirection.toDouble(), arrowLength,
+        arrowHeadSize, arrowPaint);
   }
 
   void drawArrow(

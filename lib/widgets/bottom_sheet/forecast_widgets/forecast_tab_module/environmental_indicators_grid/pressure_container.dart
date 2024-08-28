@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:some_random_design1/providers/forecast/weather_info.dart';
 
 import '../../../../../helpers/painters/pressure_painter.dart';
 import '../../../../../providers/forecast_containers_icon_provider.dart';
@@ -8,7 +9,7 @@ import 'tab_container.dart';
 
 class PressureContainer extends StatelessWidget {
   const PressureContainer({super.key});
-
+static final pressure =WeatherInfo.pressure;
   @override
   Widget build(BuildContext context) {
     return TabContainer(
@@ -19,7 +20,7 @@ class PressureContainer extends StatelessWidget {
           child: CustomPaint(
             size: Size(25.w, 25.w),
             painter:
-                PressurePainter(pressure: 1000.25), // Example pressure value
+                PressurePainter(pressure: pressure), // Example pressure value
           ),
         ),
       ],

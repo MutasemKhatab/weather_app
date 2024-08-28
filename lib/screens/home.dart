@@ -3,6 +3,7 @@ import 'package:sizer/sizer.dart';
 import 'package:some_random_design1/widgets/background/background.dart';
 import 'package:some_random_design1/widgets/bottom_sheet/forecast_widgets/forecast_bottom_sheet.dart';
 
+
 class Home extends StatelessWidget {
   const Home({super.key});
 

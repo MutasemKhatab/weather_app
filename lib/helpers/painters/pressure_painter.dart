@@ -6,7 +6,7 @@ import '../style_helpers/extra_colors.dart';
 import 'dart:math' as math;
 
 class PressurePainter extends CustomPainter {
-  final double pressure; // Pressure value in hPa
+  final int pressure; // Pressure value in hPa
 
   PressurePainter({required this.pressure});
 
@@ -85,7 +85,7 @@ class PressurePainter extends CustomPainter {
   void drawPressureValue(Canvas canvas, Offset center) {
     final textPainter = TextPainter(
       text: TextSpan(
-        text: '${pressure.toStringAsFixed(1)}\nmb',
+        text: '${pressure.toString()}\nmb',
         style: AppTextStyles.bodyMedium,
       ),
       textAlign: TextAlign.center,

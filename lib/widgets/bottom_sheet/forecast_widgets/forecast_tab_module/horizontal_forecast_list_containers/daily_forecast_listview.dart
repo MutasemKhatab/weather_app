@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:some_random_design1/widgets/bottom_sheet/forecast_widgets/forecast_tab_module/horizontal_forecast_list_containers/daily_forecast_container.dart';
 
-import 'vertical_forecast_container.dart';
 
-class ForecastListView extends StatelessWidget {
-  const ForecastListView({super.key});
+class DailyForecastListView extends StatelessWidget {
+  const DailyForecastListView({super.key});
 
   final listPadding = const EdgeInsets.only(bottom: 10, right: 10, top: 10);
   final scrollDirection = Axis.horizontal;
@@ -18,9 +18,9 @@ class ForecastListView extends StatelessWidget {
       child: ListView.builder(
         padding: listPadding,
         //TODO: this is a placeholder
-        itemCount: 10,
+        itemCount: 7,
         scrollDirection: scrollDirection,
-        itemBuilder: (_, index) => const VerticalForecastContainer(),
+        itemBuilder: (_, index) => DailyForecastContainer(index: index),
       ),
     );
   }

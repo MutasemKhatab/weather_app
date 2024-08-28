@@ -1,4 +1,5 @@
 import 'package:sizer/sizer.dart';
+import 'package:some_random_design1/providers/forecast/weather_info.dart';
 
 import '../style_helpers/app_text_styles.dart';
 import '../text_utils.dart';
@@ -17,7 +18,8 @@ class ForecastTypeTextUtils {
 
   double get leftPosition {
     //TODO [Green] find a suitable name for this
-    final normalizedLeftPosition = leftPositionFactor * heightScale;
+    final normalizedLeftPosition = (leftPositionFactor + (textWidth / 10)) *
+        heightScale; //TODO (textWidth / 10) is a placeholder try a better method
     final middleScreen = 50.w - textWidth / 2;
     final leftPosition = middleScreen + normalizedLeftPosition;
 
@@ -34,7 +36,8 @@ class ForecastTypeTextUtils {
 
   double get textWidth {
     _textWidth ??= TextUtils.calculateLetterWidths(
-        'Mostly Clear', AppTextStyles.displaySmall);
+        WeatherInfo.weatherDescription, AppTextStyles.displaySmall);
+    print('textWidth: $_textWidth');
     return _textWidth!;
   }
 }

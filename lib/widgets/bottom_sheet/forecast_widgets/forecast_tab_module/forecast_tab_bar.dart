@@ -14,7 +14,7 @@ class ForecastTabBar extends StatelessWidget {
       controller: tabController,
       tabs: const [
         Tab(text: 'Hourly Forecast'),
-        Tab(text: 'Weekly Forecast'),
+        Tab(text: 'Daily Forecast'),
       ],
     );
   }

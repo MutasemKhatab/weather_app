@@ -10,14 +10,15 @@ class BottomSheetContainer extends StatelessWidget {
 
   final tabViewContainerPadding = const EdgeInsets.only(top: 20, bottom: 10);
 
-  ForecastTabControllerProvider initializeTabController(BuildContext _) {
-    final tabController = TabController(length: 2, vsync: Scaffold.of(_));
+  ForecastTabControllerProvider initializeTabController(BuildContext ctx) {
+    final tabController = TabController(length: 2, vsync: Scaffold.of(ctx));
 
     return ForecastTabControllerProvider(tabController);
   }
 
   @override
   Widget build(BuildContext context) {
+
     return ChangeNotifierProvider(
       create: initializeTabController,
       child: const Expanded(
